@@ -32,7 +32,7 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--cov=telegram_business_bot --cov-report=term-missing"
+addopts = "--basetemp=.pytest_tmp --cov=telegram_business_bot --cov-report=term-missing"
 
 [tool.ruff]
 line-length = 100

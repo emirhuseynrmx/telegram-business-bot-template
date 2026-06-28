@@ -34,6 +34,10 @@ business-bot
 /lead Alice Johnson | alice@example.com | I need a quote for weekly reports
 ```
 
+## Sample Delivery Report
+
+![Sample Telegram bot delivery report](docs/assets/sample-bot-report-preview.png)
+
 ## Run Tests
 
 ```bash
