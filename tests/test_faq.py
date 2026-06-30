@@ -6,17 +6,18 @@ from telegram_business_bot.faq import answer_faq, order_status
 
 
 def test_answer_faq_known_topic() -> None:
-    assert "scope" in answer_faq("pricing")
+    assert "EUR" in answer_faq("pricing")
 
 
 def test_answer_faq_unknown_topic() -> None:
-    assert "not have an answer" in answer_faq("unknown")
+    assert "contact" in answer_faq("unknown").lower()
 
 
 def test_order_status_requires_id() -> None:
-    with pytest.raises(ValueError, match="Order id is required"):
+    with pytest.raises(ValueError, match="gereklidir"):
         order_status("")
 
 
-def test_order_status_returns_stub_message() -> None:
-    assert "ABC123" in order_status("abc123")
+def test_order_status_returns_project_reference() -> None:
+    result = order_status("DF-2025-0042")
+    assert "DF-2025-0042" in result
